@@ -63,11 +63,11 @@
     <!--imgs usuarios-->
     <div class="row">
 		<div class="col-md-6">
-						<img alt="usuario " src="http://icdn.pro/images/es/a/l/alt-usuario-icono-6947-128.png"><div>Jugador 1</div>
+                    <img alt="usuario" src="imgs/girl.png"><h3>Jugador 1</h3>
 
 		</div>
 		<div class="col-md-6">
-			<img alt="usuario " src="http://icdn.pro/images/es/a/l/alt-usuario-icono-6947-128.png"><div>Jugador 2</div>
+                    <img alt="usuario" src="imgs/man.png"><h3>Jugador 2</h3>
 		</div>
 	</div>
     <!--fin imgs usuarios-->
