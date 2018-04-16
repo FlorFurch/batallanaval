@@ -47,119 +47,31 @@
 			</ul>
 		</div>
 	</div>
+    <!--imgs juego-->
 	<div class="row">
 		<div class="col-md-6">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>
-							Barco
-						</th>
-						<th>
-							Coordenadas
-						</th>
-						<th>
-							Posición
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							Barco 1
-						</td>
-						<td>
-							<input type="text" id="coordenada" maxlength="1" size="2"> - <input type="text" maxlength="2" size="2">
-						</td>
-						<td>
-							<select name="transporte">
+						<img alt="Batalla " src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Schiffeversenk.jpg/220px-Schiffeversenk.jpg">
 
-                                <option>Vertical</option>
-                                
-                                <option>Horizontal</option>
-                            
-                            </select>
-						</td>
-					</tr>
-					<tr class="table-active">
-						
-						<td>
-							Barco 2
-						</td>
-						<td>
-							<input type="text" id="coordenada" maxlength="1" size="2"> - <input type="text" maxlength="2" size="2">
-						</td>
-						<td>
-							<select name="transporte">
-
-                                <option>Vertical</option>
-                                
-                                <option>Horizontal</option>
-                            
-                            </select>
-						</td>
-					</tr>
-					<tr class="table-success">
-						
-						<td>
-							Barco 3
-						</td>
-						<td>
-							<input type="text" id="coordenada" maxlength="1" size="2"> - <input type="text" maxlength="2" size="2">
-						</td>
-						<td>
-							<select name="transporte">
-
-                                <option>Vertical</option>
-                                
-                                <option>Horizontal</option>
-                            
-                            </select>
-						</td>
-					</tr>
-					<tr class="table-warning">
-						
-						<td>
-							Barco 4
-						</td>
-						<td>
-							<input type="text" id="coordenada" maxlength="1" size="2"> - <input type="text" maxlength="2" size="2">
-						</td>
-						<td>
-							<select name="transporte">
-
-                                <option>Vertical</option>
-                                
-                                <option>Horizontal</option>
-                            
-                            </select>
-						</td>
-					</tr>
-					<tr class="table-danger">
-						
-						<td>
-							Barco 5
-						</td>
-						<td>
-                        <input type="text" id="coordenada" maxlength="1" size="2"> - <input type="text" maxlength="2" size="2">
-						</td>
-						<td>
-							<select name="transporte">
-
-                                <option>Vertical</option>
-                                
-                                <option>Horizontal</option>
-                            
-                            </select>
-						</td>
-					</tr>
-				</tbody>
-			</table>
 		</div>
 		<div class="col-md-6">
 			<img alt="Batalla " src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Schiffeversenk.jpg/220px-Schiffeversenk.jpg">
 		</div>
 	</div>
+    <!--fin imgs juego-->
+    
+    
+    <!--imgs usuarios-->
+    <div class="row">
+		<div class="col-md-6">
+						<img alt="usuario " src="http://icdn.pro/images/es/a/l/alt-usuario-icono-6947-128.png"><div>Jugador 1</div>
+
+		</div>
+		<div class="col-md-6">
+			<img alt="usuario " src="http://icdn.pro/images/es/a/l/alt-usuario-icono-6947-128.png"><div>Jugador 2</div>
+		</div>
+	</div>
+    <!--fin imgs usuarios-->
+    
 	<div class="row">
 		<div class="col-md-6">
 			<form role="form">
