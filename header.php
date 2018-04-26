@@ -24,3 +24,15 @@
 			</h3>
 		</div>
 	</div>
+        <div class="row">
+		<div class="col-md-12">
+			<ul class="nav">
+				<li class="nav-item">
+                                    <a class="nav-link active" href="index.php">Inicio</a>
+				</li>
+				<li class="nav-item">
+                                    <a class="nav-link" href="paginajuego.php">Juego</a>
+				</li>
+			</ul>
+		</div>
+	</div>
