@@ -64,15 +64,19 @@ class Banco implements IArray {
    public function realizarDeposito(string $nroCta, int $monto){
       foreach ($this->coleccionCajasAhorro as $cta){
             if($cta->getNroCta()==$nroCta){
-            return $saldo=$cta->saldoCuenta()+$monto;}
+                $cta->realizarDeposito($monto);
+                return $cta->saldoCuenta();            
+            }
         }
       
          foreach ($this->coleccionCuentasCorriente as $cta){
             if($cta->getNroCta()==$nroCta){
-            return $saldo=$cta->saldoCuenta()+$monto;}
+                $cta->realizarDeposito($monto);
+                return $cta->saldoCuenta();            
+            }
         }
-        $this->saldo=$cta->saldoCuenta()+$monto;
-        return $this->$saldo;
+        // devuelvo 0 porque no existe la cuenta
+        return 0;
        
         // buscar cuenta
         // $cuentaEncontrada->realizarDeposito($monto);

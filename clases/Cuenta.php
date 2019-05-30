@@ -16,7 +16,8 @@ abstract class Cuenta implements IArray {
     
     
     public function realizarDeposito(int $monto): bool {
-        return false;
+        $this->saldo = $this->saldo + $monto;
+        return true;
     }
 
     public function realizarRetiro(int $monto): bool {
