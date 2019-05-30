@@ -4,45 +4,76 @@ require_once '../layout/header.php';
 require_once '../layout/nav-izquierda.php';
 $banco = FakeDB::$banco;
 
+// PROCESADO DEL POST
+
+if(isset($_POST['boton'])){
+    // FakeDB incluye Banco que a su vez incluye las demás clases
+    $dep = $_POST;
+    
+        $nuevoSaldo=$banco->realizarDeposito($dep['nroCuenta'],$dep['monto']);
+        
+    
+}
 ?>
 
       <!-- Main -->
         <main class="holygrail-main col-lg-7 col-xxl-9">
             <section class="text-center bg-warning">
                 <h2>Main content</h2>
-                <p class="lead">FORMULARIO DEPÓSITO.</p>
+                <p class="lead">FORMULARIO DEPÓSITO</p>
+                <span></span>
             </section>
 
             <div class="block">
                 <div class="container-fluid">
                     <section class="mb-4">
-                        <h1>A Holygrail Layout for Bootstrap 4</h2>
-                        <p class="lead">Resolved Philip Walton's Holygrail layout with Bootstrap 4 flexbox to achieve a more flexible layout template that consists of <code>nav</code>, <code>main</code> and <code>aside</code> parts</p>
+                        <form method="post">
+                          <div class="form-group">
+                            <label for="apellido">Nro Cuenta</label>
+                            <input type="text" class="form-control" name="nroCuenta" id="nroCuenta">
+                          </div>
+                          <div class="form-group">
+                            <label for="dni">Monto a depositar</label>
+                            <input type="text" class="form-control" name="monto" id="monto">
+                          </div>
+                          <button name="boton" type="submit" class="btn btn-primary">Depositar</button>
+                        </form>                        
                     </section>
 
-                    <h5>Benefits</h5>
-                    <ul>
-                        <li>Content + sidebars are fluid and their widths are defined by Bootstrap 4's grid system.</li>
-                        <li>All columns are the same height, regardless of which column is actually the tallest.</li>
-                        <li>Footer always sits at the bottom of the page, even when content is sparse.</li>
-                        <li>With the use of <code>.no-gutters</code>, content and sidebars are able to manage bleeds more effectively.</li>
-                        <li>No uneven breaking of background colors.</li>
-                    </ul>
+                </div>
+                 <div class="container-fluid">
+                    
+                    <section class="mb-4">
+                        <h5>Saldo actualizado</h5>
+                          <table class="table">
+            <thead>
+                
+            </thead>
+            <tbody>
+               <?php
+               
+                
+                    echo "
+					<tr>
+						
+						<td>
+							$nuevoSaldo
+						</td>
+                                              
+					</tr>";
+                
+                
+                ?>
+                
+
+
+            </tbody>
+        </table>
+                    </section>
                 </div>
             </div>
 
-            <div class="block">
-              <div class="container-fluid">
-                <h5>References</h5>
-                    <ul>
-                        <li><a href="https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/">Philip Walton: Holy Grail Layout Solved By Flexbox</a></li>
-                        <li><a href="https://v4-alpha.getbootstrap.com/layout/overview/">Bootstrap 4 Docs: Layout</a></li>
-                    </ul>
-              </div>
-            </div>
-
         </main>
-
 
 <?php
 FakeDB::guardarEnSesion();

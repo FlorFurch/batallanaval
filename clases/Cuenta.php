@@ -14,6 +14,7 @@ abstract class Cuenta implements IArray {
         
     }
     
+    
     public function realizarDeposito(int $monto): bool {
         return false;
     }
@@ -24,6 +25,12 @@ abstract class Cuenta implements IArray {
     
     public function saldoCuenta(): int {
         return $this->saldo;
+    }
+     public function getNroCta(){
+        return $this->nroCuenta;
+    }
+     public function getCliente(){
+        return $this->cliente->getApellido();
     }
     
     // método interno para serializar la clase a un array

@@ -2,5 +2,5 @@
 
 return 
  [ 
-     "urlBase"=>'/proyectos/pwd2019'
+     "urlBase"=>'/pwd2019'
  ];

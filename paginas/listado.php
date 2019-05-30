@@ -12,24 +12,151 @@ $banco = FakeDB::$banco;
                 <h2>Main content</h2>
                 <p class="lead">LISTADO.</p>
             </section>
+ <div class="block">
+     <div class="container-fluid">
+                    
+                    <section class="mb-4">
+                        <h5>Lista de Clientes</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        DNI
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Apellido
+                    </th>
+                    <th>
+                        N° de Cliente
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($banco->getCliente() as $c) {
+                    
+                
+                    echo "
+					<tr>
+						
+						<td>
+                                                  {$c->getDni()}
+						</td>
+						<td>
+							{$c->getApellido()}
+						</td>
+						<td>
+							{$c->getNombre()}
+						</td>
+                                                <td>
+							{$c->getNroCliente()}
+						</td>
+					</tr>";
+                }
+                ?>
 
+
+            </tbody>
+        </table>
+                    </section>
+     </div>
+    </div>
             <div class="block">
                 <div class="container-fluid">
+                    
                     <section class="mb-4">
-                        <h5>Lista de clientes</h5>
-                        <pre>
-                        <?php
-                        print_r(FakeDB::$banco);
-                        ?>
-                        </pre>
+                        <h5>Lista de Cuentas Corriente</h5>
+                          <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        N° Cuenta
+                    </th>
+                    <th>
+                        Cliente
+                    </th>
+                    <th>
+                        Saldo
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+               <?php
+                foreach ($banco->CuentasC() as $caja) {
+                    
+                
+                    echo "
+					<tr>
+						
+						<td>
+                                                  {$caja->getNroCta()}
+						</td>
+						<td>
+							{$caja->getCliente()}
+						</td>
+						<td>
+							{$caja->saldoCuenta()}
+						</td>
+                                              
+					</tr>";
+                }
+                
+                ?>
+                
+
+
+            </tbody>
+        </table>
                     </section>
+                </div>
+                  <div class="container-fluid">
+                    
                     <section class="mb-4">
-                        <h5>Lista de Cuentas</h5>
-                        <pre>
-                        <?php
-                        print_r(FakeDB::$banco);
-                        ?>
-                        </pre>
+                        <h5>Lista de Cajas de Ahorro</h5>
+                          <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        N° Cuenta
+                    </th>
+                    <th>
+                        Cliente
+                    </th>
+                    <th>
+                        Saldo
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($banco->CajasA() as $caja) {
+                    
+                
+                    echo "
+					<tr>
+						
+						<td>
+                                                  {$caja->getNroCta()}
+						</td>
+						<td>
+							{$caja->getCliente()}
+						</td>
+						<td>
+							{$caja->saldoCuenta()}
+						</td>
+                                              
+					</tr>";
+                }
+                
+                ?>
+                
+
+
+            </tbody>
+        </table>
                     </section>
                 </div>
             </div>

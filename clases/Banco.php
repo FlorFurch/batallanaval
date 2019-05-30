@@ -17,6 +17,16 @@ class Banco implements IArray {
         $this->coleccionCuentasCorriente = [];
     }
     
+    public function getCliente() {
+        return $this->coleccionClientes;
+    }
+    public function CuentasC() {
+        return $this->coleccionCuentasCorriente;
+    }
+     public function CajasA() {
+        return $this->coleccionCajasAhorro;
+    }
+    
     public function agregarCliente(Cliente $cliente): bool {
         // verificar si existe el cliente
         if(!$this->existeCliente($cliente)){
@@ -38,7 +48,32 @@ class Banco implements IArray {
         }
     }
     
-    public function realizarDeposito(string $numCuenta, int $monto): void {
+     public function buscarCuentaPorNumero($nroCta): Cuenta{
+        foreach ($this->coleccionCajasAhorro as $cta){
+            if($cta->getNroCta()==$nroCta){
+            return $cta;}
+        }
+         foreach ($this->coleccionCuentasCorriente as $cta){
+            if($cta->getNroCta()==$nroCta){
+            return $cta;}
+        }
+        return $cta;
+    }
+    
+    
+   public function realizarDeposito(string $nroCta, int $monto){
+      foreach ($this->coleccionCajasAhorro as $cta){
+            if($cta->getNroCta()==$nroCta){
+            return $saldo=$cta->saldoCuenta()+$monto;}
+        }
+      
+         foreach ($this->coleccionCuentasCorriente as $cta){
+            if($cta->getNroCta()==$nroCta){
+            return $saldo=$cta->saldoCuenta()+$monto;}
+        }
+        $this->saldo=$cta->saldoCuenta()+$monto;
+        return $this->$saldo;
+       
         // buscar cuenta
         // $cuentaEncontrada->realizarDeposito($monto);
     }
@@ -52,7 +87,7 @@ class Banco implements IArray {
     /**
      * Recibe un nro de cliente y devuelve el objeto o null
     */
-    public function buscarClientePorNumero(string $nroCliente): ?Cliente {
+    public function buscarClientePorNumero(string $nroCliente): Cliente {
         foreach($this->coleccionClientes as $cliente){
             if($cliente->getNroCliente()===$nroCliente){
                 return $cliente;
@@ -60,6 +95,9 @@ class Banco implements IArray {
         }
         return null;
     }
+    
+   
+    
     
 
     private function agregarCajaAhorro(CajaAhorro $ca): bool {
@@ -83,6 +121,13 @@ class Banco implements IArray {
     }
     
     private function existeCliente(Cliente $cliente):bool {
+        $existe=FALSE;
+        foreach ($this->coleccionClientes as $clienteLista) {
+            if ($cliente->getNroCliente()==$clienteLista->getNroCliente()){
+                return TRUE;
+            }
+            
+        }
         return false;
     }
 

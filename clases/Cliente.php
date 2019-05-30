@@ -11,6 +11,17 @@ class Cliente extends Persona {
         $this->nroCliente = $nroCliente;
     }
     
+    public function getDni(): string {
+        return $this->dni;
+    }
+    
+    public function getNombre(): string {
+        return $this->nombre;
+    }
+    public function getApellido(): string {
+        return $this->apellido;
+    }
+    
     public function getNroCliente(): string {
         return $this->nroCliente;
     }

@@ -12,6 +12,7 @@ $configuracion = require '../helpers/configuracion.php';
                 <ul>
                     <li><a href="<?= $configuracion['urlBase'] ?>/paginas/formulario-nuevo-cliente.php">Nuevo Cliente</a></li>
                     <li><a href="<?= $configuracion['urlBase'] ?>/paginas/formulario-nueva-ca.php">Nueva CA</a></li>
+                    <li><a href="<?= $configuracion['urlBase'] ?>/paginas/formulario-nueva-cc.php">Nueva CC</a></li>
                     <li><a href="<?= $configuracion['urlBase'] ?>/paginas/listado.php">Listado</a></li>
                     <li><a href="<?= $configuracion['urlBase'] ?>/paginas/formulario-deposito.php">Formulario Deposito</a></li>
                     <li><a href="<?= $configuracion['urlBase'] ?>/paginas/formulario-retiro.php">Formulario Retiro</a></li>
